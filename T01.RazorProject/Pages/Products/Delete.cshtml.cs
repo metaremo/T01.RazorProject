@@ -17,6 +17,11 @@ namespace T01.RazorProject.Pages.Products
 
         private readonly IProductService _productService;
 
+        public DeleteModel(IProductService productService)
+        {
+            _productService = productService;
+        }
+
         //public DeleteModel(T01.RazorProject.Data.ApplicationDbContext context)
         //{
         //    _context = context;

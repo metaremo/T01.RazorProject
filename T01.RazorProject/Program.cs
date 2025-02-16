@@ -1,6 +1,7 @@
 
 using Microsoft.EntityFrameworkCore;
 using T01.RazorProject.Data;
+using T01.RazorProject.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IProductService, ProductService>();
 
 var app = builder.Build();
 
